@@ -25,6 +25,10 @@ function Cart() {
     cart[findindex] = updateqty;
     setCart([...cart]);
   };
+  const handleDelete = (id) => {
+    const updatedCart = cart.filter((item) => item.id !== id);
+    setCart(updatedCart);
+  };
 
   return (
     <>
@@ -78,7 +82,7 @@ function Cart() {
                       <td>
                         <div className="delete">
                           <strong>{item.price * item.qty}</strong>
-                          <button>
+                          <button onClick={() => handleDelete(item.id)}>
                             <i className="bi bi-trash"></i>
                           </button>
                         </div>

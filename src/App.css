@@ -420,3 +420,8 @@ r .product-card-col .card .prod-ratings {
   font-size: 2rem;
   color: red;
 }
+.total-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

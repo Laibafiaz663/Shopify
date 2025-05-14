@@ -29,6 +29,10 @@ function Cart() {
     const updatedCart = cart.filter((item) => item.id !== id);
     setCart(updatedCart);
   };
+  const totalAmount = cart.reduce(
+    (acc, item) => acc + item.price * item.qty,
+    0
+  );
 
   return (
     <>
@@ -92,6 +96,10 @@ function Cart() {
                 })}
               </tbody>
             </table>
+            <div className=" total-price mt-4">
+              <h4>Total Price:</h4>
+              <h4>${totalAmount.toFixed(2)}</h4>
+            </div>
           </div>
         </div>
       </div>
